@@ -1,0 +1,46 @@
+.canvas
+{
+    width: 100%;
+    height: 100%;
+    margin-left: 10%;
+    margin-top: 15%;
+}
+
+.desc
+{
+    color: aliceblue;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.rect
+{
+    background-color: #1779ff;
+    width: 500px;
+    height: 4px;
+    left: 10%;
+    margin-bottom: 20px;
+}
+
+.imgCard
+{
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    width: fit-content;
+    height: fit-content;
+}
+
+.background
+{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    background: url("img/profile.png"), linear-gradient(70deg,#64e8de, #8a64fd);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-blend-mode: multiply;
+  }

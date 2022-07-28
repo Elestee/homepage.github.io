@@ -1,0 +1,86 @@
+.canvas {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(270deg, #d309e1 0%, rgb(156, 26, 255) 100%);
+    padding: 0;
+    margin: 0;
+  
+}
+
+.bottomArea
+{
+  position: sticky;
+  top: 100%;
+  left: 0;
+  background-color: rgb(11, 41, 68);
+}
+
+/* btm card */
+
+.card
+ {
+   flex-shrink: 0;
+ 
+     margin: 10px;
+     margin-top: 25px;
+     margin-bottom: 25px;
+     width: 200px;
+     height: 300px;
+     border-radius: 15px;
+     background: #091947;
+     transition: 0.5s;
+     
+ }
+ 
+ .card:hover
+ {
+   cursor: pointer;
+   box-shadow: 0 0 25px rgb(62, 79, 173);
+   transform: scale(1.1);
+ }
+
+.content
+{
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  text-align: center;
+}
+
+
+
+.img-btm-card
+{
+  width: inherit;
+}
+
+.img-btm-card img
+{
+  width: 90%;
+  margin: 10px auto;
+  border-radius: 15px;
+}
+
+  /* Modal */
+
+ .modal
+ {
+  position: absolute;
+  top: 20%;
+  left: 42%;
+  z-index: 1000;
+  border-radius: 15px;
+ }
+
+ .overlay
+ {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+ }
+
+ 

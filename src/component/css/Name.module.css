@@ -1,0 +1,154 @@
+
+.container .card
+{
+    margin-top: 10%;
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 40px;
+    transform: translateX(-20px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0);
+    
+    transition: 1s;
+    overflow: hidden;
+}
+
+.container .card:hover
+{
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    /* background: rgba(117,170,235,0.3); */
+    /* background: rgb(12, 20, 31); */
+    background-color: rgba(138, 100, 253, 0.8)
+    /* background: #08001b;; */
+}
+
+.container .card .content
+{
+  /* padding: 30px; */
+  text-align: center;
+}
+
+.container .card .content a
+{
+    display: inline-block;
+    /* margin-top: 15px; */
+    font-size: 100px;
+    padding: 8px 15px;
+    /* background-color: white; */
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 1s;
+}
+
+.container .card:hover .content a
+{
+    color: #e0e8f3;
+    /* color: #3A4C92; */
+}
+
+.container .card span
+{
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.container .card:hover span
+{
+  opacity: 1;
+}
+
+.container .card span:nth-child(1)
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #e3eeff);
+  animation: animate1 2s linear infinite;
+}
+
+@keyframes animate1
+{
+  0%
+  {
+    transform: translateX(-100%);
+  }
+  100%
+  {
+    transform: translateX(100%);
+  }
+}
+
+.container .card span:nth-child(2)
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to left, transparent, #e3eeff);
+  animation: animate2 2s linear infinite;
+  animation-delay: 2s;
+}
+
+@keyframes animate2
+{
+  0%
+  {
+    transform: translateX(100%);
+  }
+  100%
+  {
+    transform: translateX(-100%);
+  }
+}
+
+.container .card span:nth-child(3)
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to top, transparent, #e3eeff);
+  animation: animate3 2s linear infinite;
+  animation-delay: 1s;
+}
+
+@keyframes animate3
+{
+  0%
+  {
+    transform: translateY(100%);
+  }
+  100%
+  {
+    transform: translateY(-100%);
+  }
+}
+
+.container .card span:nth-child(4)
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #e3eeff);
+  animation: animate4 2s linear infinite;
+  animation-delay: 1s;
+}
+
+@keyframes animate4
+{
+  0%
+  {
+    transform: translateY(-100%);
+  }
+  100%
+  {
+    transform: translateY(100%);
+  }
+}

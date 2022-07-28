@@ -1,0 +1,157 @@
+.background
+{
+    /* width: max-content; */
+    height: auto;
+
+    
+}
+
+.canvas 
+{
+
+    width: 100%;
+    height:100%;
+    background-color: #091947;
+    
+    
+    /* width: 100%;
+    height: 100vh;
+    background: linear-gradient(270deg, #d309e1 0%, rgb(156, 26, 255) 100%);
+    padding: 0;
+    margin: 0; */
+  
+}
+
+
+
+
+
+/* btm card */
+
+.bottom-area
+{
+    position: absolute;
+    bottom: 0;
+    transform: translateY(21px);
+    width: 100%;
+    transition: transform 0.7s;
+    overflow-y: hidden;
+    
+
+
+}
+
+.bottom-area.close
+{
+    transform: translateY(367px);
+}
+
+.cards-open-close
+{
+    position: relative;
+    width: 80px;
+    height: 30px;
+    background-color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border: 3px solid black;
+    text-shadow: 1px 1px 1px rgb(163, 163, 163);
+}
+
+.bottom-area .cards
+{
+    background-color: black;
+}
+
+
+
+.card
+ {
+    flex-shrink: 0;
+    margin: 8px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 200px;
+    height: 300px;
+    border-radius: 15px;
+    background: #091947;
+    transition: 0.5s;
+    /* border: 3px solid rgba(255, 255, 255, 0.7); */
+ }
+ 
+.highlight
+{
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    transform: translate(-3px,-226px);
+    border-radius: 15px;
+    border: 3px solid rgba(255, 255, 255, 0.7);
+    background-color: transparent;
+    box-shadow: 
+    0 0 4px white,
+    inset 0 0 4px white;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.card:hover
+{
+cursor: pointer;
+/* box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); */
+
+transform: scale(1.1);
+
+}
+
+.card:hover .highlight
+{
+    opacity: 1;
+}
+
+.content
+{
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  text-align: center;
+}
+
+
+
+.img-btm-card
+{
+  width: inherit;
+}
+
+.img-btm-card img
+{
+  width: 90%;
+  margin: 10px auto;
+  border-radius: 15px;
+}
+
+  /* Modal */
+
+ .modal
+ {
+  position: absolute;
+  top: 20%;
+  left: 42%;
+  z-index: 1000;
+  border-radius: 15px;
+ }
+
+ .overlay
+ {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+ }
+
+ 
