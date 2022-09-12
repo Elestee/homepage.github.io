@@ -1,11 +1,10 @@
 import { faBackward, faForward, faPause, faPlay, faVolumeHigh, faVolumeXmark } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useEffect, useState, useRef} from "react"
-import styles from "./css/Player.css"
 
 export default function VolumeSlider({onVolumeChange, volume})
 {
-    const [position, setPosition] = useState(80); 
+    const [position, setPosition] = useState(60); 
     const rangeRef = useRef();
     const thumbRef = useRef();
 

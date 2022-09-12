@@ -1,7 +1,7 @@
 import { faBackward, faForward, faPause, faPlay, faVolumeHigh, faVolumeXmark } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useEffect, useState, useRef} from "react"
-import styles from "./css/Player.css"
+// import styles from "./css/Player.css"
 
 export default function PlayerControl(props)
 {

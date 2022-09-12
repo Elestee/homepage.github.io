@@ -1,28 +1,15 @@
 import React from "react";
-import { motion, MotionConfig } from "framer-motion";
 
-// export default function CreateCard({click, children, number})
-// {
-//     return (
-//         <div className="card"  onClick={click}>
-//             <div className="content" id={number}>{children}</div>
-//         </div>
-//     )
-
-
-// }
-
-export default function CreateCard({click, number, title, img})
+export default function CreateCard({click, tempId, title, img})
 {
-
     return (
         <div className="card" onClick={click}>
-            <div className="content" id={number}>
-                <div className="img-btm-card">
-                    <img src={`../${img}`} alt=""></img>
+            <div className="content" id={tempId}>
+                <div className="img-table-card" id={tempId}>
+                    <img src={`../${img}`} alt="" id={tempId}></img>
                 </div>
-                <div className="title-btm-card">{title}</div>
-                <div className="highlight"></div>
+                <div className="title-table-card" id={tempId}>{title}</div>
+                <div className="highlight" id={tempId}></div>
                 
             </div>
         </div>

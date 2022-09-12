@@ -1,27 +1,25 @@
-import styles from "./css/Genre.module.css"
-import Particle from "./Particle";
-import CreateCard from "./CreateCard";
-import { useState, useEffect } from "react";
-import React from "react";
 import songDB from "../../db/songlist.json"
-import Modal from "./Modal";
-import Player from "./Player";
-import usePreventBodyScroll from "./usePreventBodyScroll";
+
+import React, { memo, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { ScrollMenu } from "react-horizontal-scrolling-menu";
 
+import Particle from "./Particle";
+import CreateCard from "./CreateCard";
+import Modal from "./Modal";
+import Player from "./player/Player";
+import CreateDeck from "./CreateDeck";
+
 import "./css/style.css";
-import Table from "./Table";
-
-
 
 export default function Genre()
 {
 
-    const [isOpen, setIsOpen] = useState(false);
-
+  const [isOpen, setIsOpen] = useState(false);
+  
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1);
-
+  
   useEffect(() =>
   {
       setNextSongIndex(() =>
@@ -35,25 +33,36 @@ export default function Genre()
       })
   }, [currentSongIndex]);
 
-
-  const songList = songDB.songs.filter(song => (song.genre === "EDM") )
   
+  const genreList = songDB.genre;
 
-  const cardsGen = songList.map(song => 
+  const deckGen = genreList.map((genre) => 
+  {
+    return (
+      <CreateDeck 
+      title={genre}
+      tempId={genre}
+    />
+    )
+  })
+
+  const [genre, setGenre] = useState("EDM");
+  const songList = songDB.songs.filter(song => (song.genre === genre))
+
+  const cardsGen = songList.map((song, index) => 
     {
       return (
         <CreateCard
         click = {() => setIsOpen(true)}
-        number = {song.id}
+        tempId = {index}
         title={song.title}
         img={song.img_src}
         >
         </CreateCard>
       )
-        
     });
 
-    const [isOpenTable, setIsOpenTable] = useState(true);
+    const [isOpenTable, setIsOpenTable] = useState(false);
     
     let tableClass = ["bottom-area"];
 
@@ -71,15 +80,27 @@ export default function Genre()
       }
     }
 
+    const preventRender = memo(() => 
+    {
+      return <Particle />;
+    });
+
   return (
       
-      <div className="background">
+      <div className="background" 
+      // onClick={() => console.log(test)}
+      >
         <Particle />
-        <div className="canvas">
-            {/* <CreateCard
-            click = {() => setIsOpen(true)}
-            >
-            </CreateCard> */}
+        <div className="canvas" >
+          <div className="decks" onClick={(e) =>
+          {
+            let id = e.target.id;
+            setGenre(id);
+            setIsOpenTable(true);
+          }
+          }>
+            {deckGen}
+        </div>
         </div>
         
         
@@ -90,7 +111,7 @@ export default function Genre()
            nextSongIndex = {nextSongIndex}
            songs = {songList}/>
         </Modal>
-        <div className={tableClass.join(" ")}>
+        <div className={tableClass.join(" ")} onClick={(e) => console.log(e.currentTarget)}>
             <button 
             className="cards-open-close" 
             onClick={() => 
@@ -101,13 +122,21 @@ export default function Genre()
                     } else {
                         setIsOpenTable(false);
                     }
-                    console.log(isOpenTable);
                 }}
             >CARDS</button>
-            <div className="cards">
-            <ScrollMenu onWheel={onWheel}>
+            <div className="cards" 
+            onClick={(e) => 
+              {
+                let id = e.target.id;
+                setCurrentSongIndex(id);
+              }
+            }
+            // onWheel={e.currentTarget.}
+            >
+            {/* <ScrollMenu onWheel={onWheel}>
                 {cardsGen}
-            </ScrollMenu>
+            </ScrollMenu> */}
+            {cardsGen}
             </div>
             {/* <Table 
             cardsGen={cardsGen}

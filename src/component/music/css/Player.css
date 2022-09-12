@@ -44,6 +44,8 @@ body
     0 0 4px white,
     inset 0 0 4px white;
     pointer-events: none;
+    user-select: none;
+    
 }
 
 
@@ -423,8 +425,6 @@ body
 
 .more
 {
-    /* position: absolute; */
-    /* position: relative; */
     width: fit-content;
     height: fit-content;
     padding: 5px;

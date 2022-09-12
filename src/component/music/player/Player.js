@@ -1,5 +1,5 @@
 import PlayerControl from "./PlayerControl";
-import styles from "./css/Player.css"
+import "../css/Player.css"
 import { useEffect, useRef, useState } from "react";
 import React from 'react';
 import Slider from "./Slider";
@@ -19,6 +19,7 @@ export default function Player(props)
         } else {
             audioEl.current.pause();
         }
+
     })
 
     const skipSong = (forwards = true) =>
@@ -85,7 +86,7 @@ export default function Player(props)
        
     }
 
-    const [infoPanel, setInfoPanel] = useState(false);
+    // const [infoPanel, setInfoPanel] = useState(false);
 
     return (
         <div className="player-modal">

@@ -1,17 +1,19 @@
 .background
 {
     /* width: max-content; */
-    height: auto;
 
-    
+
 }
+
+/* deck area */
 
 .canvas 
 {
 
     width: 100%;
     height:100%;
-    background-color: #091947;
+
+
     
     
     /* width: 100%;
@@ -22,48 +24,90 @@
   
 }
 
+/* deck */
 
+.decks
+{
+    display: flex;
+    margin-top: 15%;
+    justify-content: space-evenly;
 
+}
+.deck
+{
+    
+    position: relative;
 
+    /* flex-shrink: 2; */
+    text-align: center;
+    /* margin: auto; */
+    width: 200px;
+    height: 300px;
+    border-radius: 15px;
+    background: #091947;
+    transition: 0.5s;
+}
+
+.deck:hover
+{
+    cursor: pointer;
+    transform: scale(1.1);
+
+}
+
+.deck-title
+{
+    color: white;
+}
+
+.deck-img
+{
+    width: inherit;
+}
+
+.deck-img img
+{
+    width: 90%;
+  margin: 10px auto;
+  border-radius: 15px;
+}
 
 /* btm card */
 
 .bottom-area
 {
-    position: absolute;
+    position: fixed;
+    /* position: absolute; */
+    /* transform: translateY(40px); */
     bottom: 0;
-    transform: translateY(21px);
     width: 100%;
     transition: transform 0.7s;
-    overflow-y: hidden;
-    
-
-
+    /* overflow-x: scroll; */
 }
+
 
 .bottom-area.close
 {
-    transform: translateY(367px);
-}
-
-.cards-open-close
-{
-    position: relative;
-    width: 80px;
-    height: 30px;
-    background-color: white;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border: 3px solid black;
-    text-shadow: 1px 1px 1px rgb(163, 163, 163);
+    transform: translateY(350px);
 }
 
 .bottom-area .cards
 {
     background-color: black;
+    /* border-top: 2px solid #bbbbbb; */
 }
 
+.cards
+{
+    display: flex;
+    overflow-x: scroll;
+    
+}
 
+.cards::-webkit-scrollbar
+{
+    display: none;
+}
 
 .card
  {
@@ -110,6 +154,8 @@ transform: scale(1.1);
     opacity: 1;
 }
 
+/* table card content */
+
 .content
 {
   position: inherit;
@@ -118,18 +164,68 @@ transform: scale(1.1);
   text-align: center;
 }
 
+.title-table-card
+{
+    color: white;
+}
 
-
-.img-btm-card
+.img-table-card
 {
   width: inherit;
 }
 
-.img-btm-card img
+.img-table-card img
 {
   width: 90%;
   margin: 10px auto;
   border-radius: 15px;
+}
+
+/* Table open close trigger*/
+
+.cards-open-close
+{
+    position: relative;
+    /* position: absolute; */
+    width: 80px;
+    height: 30px;
+    background-color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border: 2px solid #363636;
+    text-shadow: 1px 1px 1px rgb(163, 163, 163);
+    user-select: none;
+}
+
+.cards-open-close:hover
+{
+    cursor: pointer;
+}
+
+.cards-open-close::before
+{
+    content: "Hide/Show";
+    width: auto;
+    height: auto;
+    padding: 2px;
+    border-radius: 5px;
+    border: 2px solid #31437A;
+    background-color: #091947;
+    color: #bbbbbb;
+    /* border: 2px solid #091947; */
+    text-shadow: none;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: -90%;
+    left: 95%;
+    transition: 0.3s;
+}
+
+.cards-open-close:hover::before
+{
+    visibility: visible;
+    opacity: 1;
 }
 
   /* Modal */

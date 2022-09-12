@@ -6,6 +6,7 @@ import Home from './component/Home';
 
 import Genre from './component/music/Genre';
 import React from 'react';
+import Transaction from './component/transaction/Transaction';
 
 
 
@@ -16,8 +17,8 @@ function App() {
       <Header />
       <Routes>
         <Route exact path='/' element={<Home />}></Route>
-        <Route path='/music/genre' element={<Genre />}>
-        </Route>
+        <Route path='/music/genre' element={<Genre />}></Route>
+        <Route path='/transaction' element={<Transaction />}></Route>
       </Routes>
       </div>
 
@@ -25,19 +26,5 @@ function App() {
     
   );
 }
-
-// function App()
-// {
-  
-
-//   return (
-//     <div className='App'>
-      
-
-//     <Test />
-//     {/* <MusicPlayerSetup /> */}
-//     </div>
-//   )
-// }
 
 export default App;

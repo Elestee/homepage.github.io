@@ -9,8 +9,9 @@ export default function Header()
                 <Link to="/" className={styles.menu}>HOME</Link>
                 <Link to="/about" className={styles.menu}>ABOUT</Link>
                 <Link to="/music/genre" className={styles.menu}>MUSIC</Link>
-                <Link to="/gallery" className={styles.menu}>GALLERY</Link>
                 <Link to="/contact" className={styles.menu}>CONTACT</Link>
+                <Link to="/transaction" className={styles.menu}>UPDATE</Link>
+                
             </div>
         </div>
     )
