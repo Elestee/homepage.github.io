@@ -70,6 +70,7 @@ export default function PageTwo()
             {
                 setCoverUrl(reader.result);
                 resolve();
+                // console.log()
             }
         })
     } 
