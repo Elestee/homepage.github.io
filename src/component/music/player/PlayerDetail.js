@@ -4,9 +4,6 @@ export default function PlayerDetail(props)
 {
     return (
         <div className="player-details">
-            
-
-
             <div className="details-img">
                 <img src={props.song.img_src} alt=""></img>
             </div>
